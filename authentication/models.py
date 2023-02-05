@@ -4,7 +4,6 @@ from django.contrib.auth.models import BaseUserManager, PermissionsMixin, Abstra
 from django.utils import timezone
 
 
-
 class UserManager(BaseUserManager):
     def _create_user(self, email, first_name, last_name, is_staff, is_superuser,
                      password=None,
@@ -64,4 +63,3 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def get_abstract_url(self):
         return '/users/%i/' % self.pk
-

@@ -44,12 +44,13 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'djoser',
     'authentication',
+    'contact',
     'corsheaders'
 ]
 
 SWAGGER_SETTINGS = {
     'SECURITY_DEFINITIONS': {
-        'Bearer': {
+        'JWT': {
             'type': 'apiKey',
             'name': 'Authorization',
             'in': 'header'
@@ -87,12 +88,6 @@ TEMPLATES = [
         },
     },
 ]
-
-REST_FRAMEWORK = {
-   'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated'
-   ),
-}
 
 WSGI_APPLICATION = 'contactProject.wsgi.application'
 
@@ -152,12 +147,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.IsAuthenticatedOrReadOnly'],
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ),
-}
 SIMPLE_JWT = {
     'AUTH_HEADER_TYPES': ('JWT',),
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
@@ -171,8 +160,8 @@ SIMPLE_JWT = {
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'digi2splatform@gmail.com'
-EMAIL_HOST_PASSWORD = 'uwybhdrctgmdzget'
+EMAIL_HOST_USER = 'gabsiaziz37@gmail.com'
+EMAIL_HOST_PASSWORD = 'xcnqqyvxgqpzkxaf'
 EMAIL_USE_TLS = True
 DJOSER = {
     'LOGIN_FIELD': 'email',
